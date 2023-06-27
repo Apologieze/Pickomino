@@ -28,3 +28,9 @@ Le jeu Pickomino offre les fonctionnalités suivantes :
 - Garder des dés : Les joueurs peuvent choisir quels dés garder pour leur tour.
 - Prendre un pickomino : Les joueurs peuvent prendre un pickomino s'il est disponible et marquer des points.
 - Rotation des joueurs : Le tour des joueurs est automatiquement géré, avec la rotation des joueurs actifs.
+
+## Images
+
+![image1](/img/Preview/preview1.jpg)
+![image2](/img/Preview/preview2.jpg)
+![image3](/img/Preview/preview3.jpg)
