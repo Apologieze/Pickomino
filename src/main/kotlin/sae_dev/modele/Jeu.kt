@@ -12,9 +12,9 @@ class Jeu(nb_player: Int, debug: Boolean = false) {
     private var key : Int
     private val connect : Connector
     private val identification : Pair<Int, Int>
-    private val pickoJoueurList : ArrayList<ArrayList<Int>> = arrayListOf()
+    val pickoJoueurList : ArrayList<ArrayList<Int>> = arrayListOf()
     init {
-        connect = Connector.factory("172.26.82.76", "8080", debug)
+        connect = Connector.factory("127.0.0.1", "8080", debug)
 
         identification = connect.newGame(nb_player)
         id = identification.first
@@ -122,9 +122,11 @@ class Jeu(nb_player: Int, debug: Boolean = false) {
         val buttonList = ArrayList<Int>()
         var index = 0
         val tempList = listOf(DICE.d1,DICE.d2,DICE.d3,DICE.d4,DICE.d5,DICE.worm)
+        val tempCheckKeep = checkKeep()
+        val tempCheckRoll = checkRoll()
 
         for (dice in tempList){
-            if (dice !in checkKeep() && dice in checkRoll()){
+            if (dice !in tempCheckKeep && dice in tempCheckRoll){
                 buttonList.add(index)
             }
             index += 1

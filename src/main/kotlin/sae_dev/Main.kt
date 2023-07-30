@@ -1,8 +1,6 @@
 package sae_dev
 
 import sae_dev.modele.Jeu
-import iut.info1.pickomino.Connector
-import iut.info1.pickomino.data.DICE
 import sae_dev.vue.AccueilVue
 import javafx.application.Application
 import javafx.scene.Scene

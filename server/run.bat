@@ -1,0 +1,1 @@
+java -jar ./libs/iut.pickomino.pickomino-server-all.jar
