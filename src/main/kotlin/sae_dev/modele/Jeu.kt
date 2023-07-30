@@ -91,10 +91,10 @@ class Jeu(nb_player: Int, debug: Boolean = false) {
 
         for (number in score downTo 21){ // regarde si le pickomino est dans la liste d'un joueur except le joueur courrant
             if (number in accessiblePickomino()){
-                if (pickoInStack(score)) {
-                    return listOf(number, score)
+                return if (pickoInStack(score)) {
+                    listOf(number, score)
                 }else{
-                    return listOf(number)
+                    listOf(number)
                 }
             }
         }
@@ -107,7 +107,7 @@ class Jeu(nb_player: Int, debug: Boolean = false) {
 
     fun scoreKeepDice():Int{ // Renvoie le score des dées que le joueur a déjà gardé
         val diceList = checkKeep()
-        var score: Int = 0
+        var score = 0
         for (dice in diceList){
             score += if (dice == DICE.worm){
                 dice.ordinal
