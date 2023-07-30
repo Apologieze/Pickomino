@@ -17,12 +17,13 @@ class ControleurGarderDes(private val vue: MainVue, private val game: Jeu, prima
         val tempJoueur = vue.joueurEnCours
         game.keep(de)
         vue.boutonPrendre.isDisable = game.pickoTake().isEmpty()
-        vue.updateDesGardes(game.checkKeep())
+        val checkKeep = game.checkKeep()
+        vue.updateDesGardes(checkKeep)
         vue.labelNbScore.text = game.scoreKeepDice().toString()
-        if (game.checkKeep().size == 8){
+        if (checkKeep.size == 8){
             vue.boutonLancer.isDisable = true
         }
-        if(game.checkKeep().isEmpty()){
+        if(checkKeep.isEmpty()){
             var text = "Le joueur ${tempJoueur.nom} n'a pas réussi à prendre de pickomino"
             val tempPicko = tempJoueur.pickomino
             if (tempPicko != null){

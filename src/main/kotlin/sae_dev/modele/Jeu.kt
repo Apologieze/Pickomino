@@ -89,7 +89,7 @@ class Jeu(nb_player: Int, debug: Boolean = false) {
             return listOf(score)  // Liste contenant uniquement le pickomino du milieu
         }
 
-        for (number in score downTo 21){ // regarde si le pickomino est dans la liste d'un joueur except le joueur courrant
+        for (number in score downTo 21){ //Regarde si le pickomino est dans
             if (number in accessiblePickomino()){
                 return if (pickoInStack(score)) {
                     listOf(number, score)
@@ -98,7 +98,7 @@ class Jeu(nb_player: Int, debug: Boolean = false) {
                 }
             }
         }
-        if (pickoInStack(score)) {
+        if (pickoInStack(score)) {  // regarde si le pickomino est dans la liste d'un joueur except le joueur courrant
             return listOf(score)
         }
 
